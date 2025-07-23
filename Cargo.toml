@@ -1,0 +1,17 @@
+[package]
+name = "dht22-sensor"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+embedded-hal = "1.0.0"
+defmt = { version = "1.0.1", optional = true }
+
+[features]
+defmt = ["dep:defmt"]
+
+[dev-dependencies]
+embedded-hal-mock = { version = "0.11.1", default-features = false, features = [
+    # eh1: Provide module eh1 that mocks embedded-hal version 1.x (enabled by default)
+    "eh1",
+] }
