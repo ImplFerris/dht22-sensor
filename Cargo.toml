@@ -2,6 +2,13 @@
 name = "dht22-sensor"
 version = "0.1.0"
 edition = "2024"
+authors = ["ImplFerris"]
+description = "A no_std driver for the DHT22 (AM2302) temperature and humidity sensor"
+license = "MIT"
+repository = "https://github.com/implferris/dht22-sensor"
+readme = "README.md"
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["dht22", "sensor", "embedded-hal", "no-std", "temperature"]
 
 [dependencies]
 embedded-hal = "1.0.0"
