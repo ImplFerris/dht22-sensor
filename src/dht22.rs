@@ -194,7 +194,6 @@ mod tests {
 
     fn start_sequence() -> Vec<PinTx> {
         vec![
-            PinTx::set(PinState::High), // Initial High
             // MCU initiates communication by pulling the data line low, then releasing it (pulling it high)
             PinTx::set(PinState::Low),
             PinTx::set(PinState::High),
@@ -231,7 +230,6 @@ mod tests {
         expect.extend_from_slice(&start_sequence());
 
         let mut pin = PinMock::new(&expect);
-        pin.set_high().unwrap();
 
         let delay_transactions = vec![DelayTx::delay_ms(1), DelayTx::delay_us(40)];
         let mut delay = CheckedDelay::new(&delay_transactions);
@@ -427,7 +425,6 @@ mod tests {
         }
 
         let mut pin = PinMock::new(&pin_states);
-        pin.set_high().unwrap();
 
         // Delays: start = 1ms + 40us
         let mut delay_transactions = vec![DelayTx::delay_ms(1), DelayTx::delay_us(40)];
@@ -466,7 +463,6 @@ mod tests {
         }
 
         let mut pin = PinMock::new(&pin_states);
-        pin.set_high().unwrap();
 
         // Delays: start = 1ms + 40us
         let mut delay_transactions = vec![DelayTx::delay_ms(1), DelayTx::delay_us(40)];
